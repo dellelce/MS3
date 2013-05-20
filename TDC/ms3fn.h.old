@@ -1,0 +1,383 @@
+/*
+**
+**
+** MS3 functions prototypes (for Aztec 3.6a)
+** smart use
+**
+**
+*/
+
+
+/* % blocks.c
+** 
+*/ 
+
+#ifndef	BLOCKS_C
+BLOCK		*newblock ();
+BLOCK		*createblock ();
+BOOL		 deleteloneblock ();
+VOID		*makeroom ();
+UWORD		*ptrtoword ();
+BLOCK		*packblock ();
+VOID		 deleteblockchain ();
+VOID		 blockwrite ();
+VOID		 bwritew ();
+ULONG		 lastusedbyte ();
+VOID		*reallastbyte ();
+BOOL		 freeblockarea ();
+UWORD		*wordtoptr ();
+BOOL		 bwriteat ();
+#endif
+
+
+/* % blocks1.c
+** 
+*/ 
+
+#ifndef	BLOCKS_C
+BOOL		 writevarinfo ();
+#endif
+
+
+/* % code.c
+** 
+*/ 
+
+#ifndef CODE_C
+VOID		 branchat ();
+WRLIST		*createrlist ();
+VOID		 dellab ();
+USHORT		 bcountused ();
+UWORD		 writegbunch ();
+BOOL		 makecode ();
+HUNK		*createhunk ();
+MAKEVAR		*makevar ();
+BOOL		 lifetrace ();
+#endif
+
+
+/* % code1.c
+** 
+*/ 
+
+#ifndef CODE1_C
+CODEN		*createcoden ();
+VOID		 initregs ();
+BOOL		 reatemove ();	/* ?		*/
+VOID		 initregs ();	/* ?		*/
+BOOL		 makecode ();
+BOOL		 findcall ();
+BOOL		 newcall ();
+#endif
+
+/* % data.c
+** 
+*/ 
+
+#ifndef	DATA_C
+FB		*CreateSingleBuf ();
+FB		*BufOpen ();
+FB		*BufPack ();
+BOOL		 BufWrite ();
+ULONG		 BufPrint ();
+SNAME		*NumToA ();
+VOID		 shiftleft ();
+VOID		 BufDelete ();
+BOOL		 BufSave ();
+#endif
+
+
+/* % data1.c
+** 
+*/ 
+
+#ifndef	DATA1_C
+ULONG		 WriteBufArea ();
+FB		*LoadUpBuf ();
+#endif
+
+/* % data2.c
+** 
+*/ 
+
+#ifndef	DATA2_C
+VOID		 BufDelete ();
+BOOL		 BufSave ();
+#endif
+
+
+/* % errors.c
+** 
+*/ 
+
+#ifndef ERRORS_H
+FLAG		 seterror ();
+VOID		 rawtyperror;
+#endif
+
+
+/* % fast.asm
+** 
+*/
+
+VOID		*_fast_alloc ();
+VOID		*_alloc ();
+ULONG		 _tot_memory ();
+LONG		 _memory ();
+
+/* % functions.c:
+** 
+*/ 
+
+#ifndef FUNCTIONS_C
+BOOL		 AllocFunction ();
+LPI		*ParserItem ();
+PARSER		*ParseLine ();
+LPARSE		*AllocLineParse ();
+#endif
+
+
+/* % mc.c
+** 
+** this should not be needed 
+** 
+*/ 
+
+#ifndef	MC_C
+BOOL		 initghandle (GHANDLE *)
+ULONG		 _main ()
+#endif
+
+/* % names.c
+** 
+** 
+*/ 
+
+#ifndef NAMES_C
+VOID		 getnametype ();
+NAME		*findname ();
+VOID		 delname ();
+BOOL		 createnb ();
+VOID		 addname ();
+#endif
+
+
+/* % process.c
+** 
+*/ 
+
+#ifndef PROCESS_C
+BOOL		 savepmap ();
+PMAP		*loadpmap ();
+VOID		 deletepmap ();
+PMAP		*createpmap ();
+BOOL		 setitem ();
+#endif
+
+/* % routines.c
+** 
+*/ 
+
+#ifndef ROUTINES_C
+FH		*hopen ();
+VOID		 hclose ();
+BOOL		 hclosedown ();
+VOID		 hnextblock ();
+UBYTE		 hget ();
+VOID		 goback ();
+SNAME		*createsname ();
+BOOL		 hskipblank ();
+ITEM		*newitem ();
+BOOL		*getrawstr ();
+VOID		 hgetname ();
+BYTE		*getanumber ();
+VOID		 getaname ();
+BOOL		 getspecial ();
+SNAME		*createsname ();
+VOID		 delsname ();
+VNODE		*addvarl ();
+UWORD		 resetvlist ();
+ITEM		*findindir ();
+VAR		*findinvlist ();
+#endif
+
+
+/* % routines1.c
+** 
+*/ 
+
+#ifndef ROUTINES1_C
+SSTACK		*createsstack ();
+BOOL		 delsstack ();
+BOOL		 addstack ();
+BOOL		 addstatus ();
+UWORD		 getstatus ();
+ITEM		*createitem ();
+BLOCK		*loadblock ();
+ITEM		*findinlib ();
+BOOL		 getname ();
+VOID		 freesname ();
+BOOL		 putstring ();
+VOID		 warn ();
+BOOL		 countactionvardefs ();
+LABEL		*findlabel ();
+VOID		*toup ();
+LABEL		*createlabel ();
+#endif
+
+
+/* % routines2.c
+** 
+*/ 
+
+#ifndef ROUTINES2.C
+BOOL		 boxfind ();
+UWORD		 wbound ();
+VOID		*realp ();
+ITEM		*findinblock ();
+CIBOX		*joincibox ();
+CIBOX		*countcalls ();
+BOOL		 writevarinfo ();
+VOID		*getdefinition ();
+#endif
+
+
+/* % routines3.c
+** 
+*/ 
+
+#ifndef ROUTINES3_C
+NBH		*getline ();
+TITEM		*newtitem ();
+UBYTE		*findstructitem ();
+WSTRUCT		*openworkstruct ();
+USHORT		 wstrgetitems ();
+#endif
+
+
+/* % routines4.c
+** 
+*/ 
+
+#ifndef ROUTINES4_C
+BOOL		 source ();
+LONG		 __addsourcef ();
+VOID		 removegroup ();
+VOID		 addname ();
+BOOL		 putsimpledeftype ();
+BOOL		 pmopnotoavail ();
+BOOL		 headerdef2use ();
+BOOL		 getvartype ();
+BOOL		 getvarrealsize ();
+BOOL		 putsimpledefsize ();
+#endif
+
+
+/* % search.c
+** 
+*/ 
+
+#ifndef SEARCH_C
+VOID		*mapfind ();
+STRNODE		*listfind ();
+#endif
+
+
+/* % startup.c
+** 
+*/ 
+
+#ifndef STARTUP_C
+BOOL		 getstartupenv ();
+BOOL		 getargs ();
+BOOL		 makearg ();
+#endif
+
+/* % strcmp.c
+** 
+*/ 
+
+#ifndef STRCMP_C
+BOOL		 strcmp ();
+#endif
+
+/* % tonylists.c
+** 
+*/ 
+
+#ifndef TONYLISTS_C
+BOOL		 freenode ();
+#endif
+
+/* % traslate.c
+** 
+*/ 
+
+#ifndef	TRASLATE_C
+BOOL		 traslatepmap ();
+BOOL		 setconstant ();
+BOOL		 skipaline ();
+#endif
+
+
+/* % traslate1.c
+** 
+*/ 
+
+#ifndef TRASLATE1_C
+BOOL		 setvardef ();
+BOOL		 getvardef ();
+BOOL		 getvaruse ();
+#endif
+
+/* % traslate2.c
+** 
+*/ 
+
+#ifndef TRASLATE2_C
+BOOL		 dounknown ();
+ULONG		 makeobject ();
+BOOL		 getexpression ();
+BOOL		 makestarter ();
+BOOL		 getginit ();
+BOOL		 makeaction ();
+#endif
+
+
+/* % traslate3.c
+** 
+*/ 
+
+#ifndef TRASLATE3_C
+BOOL		 makestructure (;
+BOOL		 getmatrix ();
+BOOL		 getinit ();
+#endif
+
+
+/* % traslate4.c
+** 
+*/ 
+
+#ifndef TRASLATE4_C
+BOOL		 hearttraslate ();
+#endif
+
+/* % traslate5.c
+** 
+*/ 
+
+#ifndef TRASLATE5_C
+BOOL		 __obj_create ();
+BOOL		 __obj_open ();
+BOOL		 gatanycall ();
+#endif
+
+/* % utility.c
+** 
+*/ 
+
+#ifndef UTILITY_C
+BOOL		 showdir ();
+BOOL		 showfile ();
+#endif

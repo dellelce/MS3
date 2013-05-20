@@ -1,0 +1,47 @@
+;
+; 1st: 'Block' structure
+;
+; used for archiving any kind of data
+;
+typedef struct Block
+{
+struct Block *	BlockNext;
+struct Block *	BlockLast;
+			; blocks chain
+ULONG		BlockSize;
+			; global block size
+UBYTE		BlockItemsType;
+			; type of items used in the block
+			; 0 if items type not specified
+UWORD		BlockItemsCount;
+			; no of items in the block
+			; 0 if items counting not used
+UWORD		BlockItemsSize;
+			; each item size
+UWORD		BlockLastByte;
+			; last byte (its offset) used in the block
+UWORD		BlockOverHead;
+			; a initial object size not included in the items count
+			; 0 if no overhead
+} BLOCK;
+
+;
+; 2nd: 'hunk' structure
+;
+; used for archiving 68k code
+;
+
+struct hunk
+{
+UWORD		AllocatedWords;
+			; number of words used in the hunk
+UWORD		LastUsedWord;
+			; last used word in the hunk of the available
+UWORD		FirstEmpty;
+UWORD		LastEmpty;
+			; data about an 'empty zone' before of 'LastUsedWord'
+UWORD		CurrentWord;
+			; currently 'cursor' location
+UWORD		References;
+			; number of words/longs to 'be replaced'
+};

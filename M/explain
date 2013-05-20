@@ -1,0 +1,111 @@
+	Explanations
+-------------------------------------------------------------------------------
+	*****************
+	OBJECTS
+	*****************
+	
+	A MS3 Object is in two parts: the first part contains the set of
+	attributes (for example a 'WINDOW' will contain the following
+	attributes: title, x, y, width, height etc).
+	the second part contains the 'handler', which controls the
+	changing of the attributes values, the creation of new object
+	or its deletion, an object opening or its closing, on object
+	attributes value request.
+	
+	These are the obect operators:
+	
+	* OPEN
+	
+	opens an object ( object must already exist )
+	
+	* CLOSE
+	
+	closes an object ( object will not be deleted )
+	
+	* CREATE
+	
+	creates a new object ( object did not exist )
+	
+	* DELETE
+	
+	object will be deleted
+	
+	and more there is another 'handler': it is the ASK handler 
+	which does not have reserved word for its work but just an 
+	'access syntax':
+	VARIABLE = objectvar(attributename);
+	
+	for example:
+	titolo = mywindow (title);
+	
+	*****************
+	VARIABLES
+	*****************
+	
+	Variable definitions used in the MS3 language are:
+	
+	byte		: a 8-bit variable size, integer
+	word		: a 16-bit variable size, integer
+	long		: a 32-bit variable size, integer
+	string		: defines a pointer to a string
+	number		: a 32-bit variable size, either integer or floating
+	float		: a 32-bit variable size, floating
+	double		: a 64-bit variable size, floating
+	struct/structure: a 'structure' variable, similar to a 'C' one
+	** STREAM **	: not used in 1st realese, it is a dynamic size struct.
+	unsigned	: the next definition variable is without sign!
+	signed		: the variable is signed ( as normally happens )
+	pointer		: it explains that the object is just a pointer
+			: to the described variable
+	
+	
+	Examples:
+	
+	pointer unsigned long umberto;
+	
+	 stands for a pointer ( 32-bit sized object ) for a variable size 32 bits
+	 and without any sign!
+	
+	pointer long big[1000];
+	
+	 stands for a pointer to vector of 1000 32-bit size objects.
+	
+	*****************
+	FUNCTIONS
+	*****************
+	
+	Functions are external routines than can be inserted in a MS3 program
+	kinds of functions for Amiga are:
+	
+	1. The library calls
+	   They are pieces of libraries, that can be called by a lot of tasks
+	   simultaneously.
+	
+	2. Binary functions
+	   They are pieces of raw machine language.
+	
+	3. Interrupt functions.
+	   This kind of functions are used only by the 86 family of processors.
+	
+	all functions can not be included directly on a MS3 program file.
+	
+	*****************
+	LOOPS
+	*****************
+	
+	They are different kinds of loop that can be used:
+	They are:
+	
+		do
+		
+		
+		while (_ _ _ loop checker _ _ _);
+		( loop with final control )
+		
+		
+		
+		while (_ _ _ loop checker _ _ _);
+		
+		
+		close while; / wend;
+		( loop with initial control )

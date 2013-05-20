@@ -1,0 +1,20 @@
+			MS3 Language Dictionary
+--------------------------------------------------------------------------------
+Word		+ Info
+--------------------------------------------------------------------------------
+ProcessMap	  A structure used for archieving data about the traslating
+		  program .
+		  It can be used as a library, too.
+
+Hunk		  A structure used for recording machine language code.
+		  Its basical recording unit is the UWORD (== unsigned int)
+		  used because of the 68K machine language way of shaping
+		  istructions.
+		  There should not be many problem to use it for other
+		  processors.
+
+DataHunk	  It is the same as for hunk, but 'DataHunk' is used only for
+		  archieving data!
+--------------------------------------------------------------------------------
+
+Words: 3

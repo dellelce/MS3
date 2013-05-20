@@ -1,0 +1,430 @@
+/* tony dee © 1992
+** 
+** 
+** basical vars definition
+** 
+** 
+*/ 
+
+
+XXXX.YSSS.AAAA.BBBB
+
+x
+
+0  definition
+1  use
+
+ yy
+ 00 call
+ 01 variable
+ 10 special (label, block etc)
+ 11 yet not defined
+
+**
+** DEFINING VARIABLES
+**
+
+|XXXX.YSSS.AAAA.BBBB
+|001z.tSSS.ispa.tttt variable definition
+|
+|   z Complexity
+|   0 complex (it has items: vectors)
+|   1 simple  (it doesn't have any item)
+|
+|001z.tSSS.ispa.tttt
+|     t Type
+|     0 standard type (ex: long, number)
+|     1 user type (ex: structure)
+|
+|001z.tSSS.ispa.tttt
+|	   i Initialization	(??)
+|	   0 No initialization done
+|	   1 initialized (long x = 100;)
+|	  
+|001z.tSSS.ispa.tttt
+|	    s Sign
+|	    0 signed
+|	    1 unsigned
+|
+|001z.tSSS.ispa.tttt
+|	     p Pointer
+|	     0 no pointer
+|	     1 pointer
+|
+|001z.tSSS.ispa.tttt
+|             a Staticity
+|	      0 non-static
+|	      1 static
+|	      
+|
+|
+|001z.tSSS.ispa.tttt
+|		tttt type
+|		???? described in logicvars.h
+|
+|
+|  | 
+|  | Variable header
+|  | 
+|
+|  | 
+|  | Name
+|  | 
+|
+|  |
+|  | Definition offset (only for user def'd variable types)
+|  |
+|
+|  | 
+|  | Extension
+|  | 
+|
+|  |
+|  | Init words (string offset, number value or S P E C I A L  V A L U E)
+|  |
+|
+|
+| Description of the 'Extension word' for the vardef (perhaps bbbb <-> mmii)
+|
+|XXXX.YYYY.ZZZZ.NNNN
+|uuuu bbbb uuxx mmii
+|
+|		mm Matrix
+|		00 normal
+|		01 undefined
+|		10 vector
+|		11 matrix
+|
+|		   ii Init mode
+|		   00 global init (only numbers or strings)
+|		   01 undefined
+|		   10 local init (with only numbers or strings)
+|		   11 local init (with B L O C Ks)
+|
+|     bbbb Block number (where to find init data)
+|
+|
+|
+|
+|
+| /* TO FIX/MODIFY */
+
+
+**
+** CALLING
+**
+
+|XXXX.YSSS.AAAA.BBBB
+|100
+|
+|   z z
+|   0 0 raw call
+|   0 1 action
+|   1 0 function
+|   1 1 undefined type
+|
+|      SSS - size as usual
+|
+|	   i Arguments In
+|	   1 there are
+|	   0 there aren't
+|	    
+|	   
+|	    AAA.BBBB Yet Undefined
+|	    000.0000 They are all zeroes
+|
+|
+ |
+ | *
+ | * Var Header
+ | *
+ | 
+ | *
+ | * Function/Action Name or Offset
+ | *
+ |
+ | *
+ | * No. of Args. In
+ | *
+ |
+ | Arg out (if req'd)
+ |
+ | List of args (if any), a list of blocks/constants
+ |
+
+
+**
+** USING A VARIABLE
+**
+
+  101Z.ZSSS.ZZZZ.ZZZZ
+  
+     d.d General Description
+     0 0 simple		(no access to sub item	)
+     0 1 complex 	(access to sub item	)
+     1 0 constant	(variable is a constant	)
+     1 1 ??????????????	(undefined		)
+     
+        ??? Size
+	    
+| 1010.0SSS.hvgi.---- complex var use
+| 
+| 	    h dimensions
+| 	    0 one 'dimension'
+| 	    1 multiple 'dimensions'
+| 
+| 	     v vector
+| 	     0 
+| 	     1 vector or matrix
+| 
+| 	       g globality
+| 	       0 local
+| 	       1 global
+| 
+| 		i identifier
+| 		0 string (currently it is always a string)
+| 		1 number
+| 
+| 
+| 
+| 
+| 
+
+| constants definition
+| XXXX.YSSS.AAAA.BBBB
+| 1011.0SSS.????.fstt
+| 		 f Floating
+| 		 0 integer - string
+| 		 1 floating
+| 		  s Size/signed
+| 		  0 FLOAT - unsigned if INT
+| 		  1 DOUBLE - signed if INT
+| 		   tt
+| 		   00 byte
+| 		   01 word
+| 		   10 long
+| 		   11 string
+| 
+| 
+
+
+** 
+** Internals examination
+** 
+
+| 
+| XXXX.YSSS.AAAA.BBBB specialties -- internals definition
+| 110d dSSS
+|    d d special types
+|    0 0 jumping and blocks
+|    0 1 fast internals -- int/s 0
+|    1 0 internals 1/2
+|    1 1 extended
+| 
+| 
+| 
+| XXXX.YSSS.AAAA.BBBB 
+| 1100 1--- kiii tttt
+| 	    k Class (super)
+| 	    0 lower
+| 	    1 upper
+| 	     iii Indicator
+| 		 tttt Type
+| 
+| 1100 1--- 1iii tttt		(. == sub)
+| 
+| (.) cls 4  000 0001 '<'
+| 	     000 0010 '>'
+| 	     000 0011 '=='
+| 	     000 0100 '!='
+| 	     000 0101 '=>'
+|	     000 0110 '=<'
+|  "  cls 3  000 0111 '*'
+| 	     000 1000 '-'
+| 	     000 1001 '+'
+| 	     000 1010 '/'
+|  "  cls 2  000 1011 '['
+| 	     000 1100 ']'
+|  "  cls 1  000 1101 '('
+| 	     000 1110 '('
+|  "  cls 5  001 0001 '|'
+| 	     001 0010 '&'
+| 	     001 0011 '!'
+| 	     001 0100 '^'
+|  "  cls 6  001 0101 ','
+| 	     001 0110 ':'
+| 	     001 0111 '#'
+| 	     001 1000 '?'
+| 	     001 1001 '.'
+|  "  cls 7  001 1010 '~'
+| 	     001 1011 '_'
+| 	     001 1100 '\'
+|  "  cls 8  010 0001 '>>'
+| 	     010 0010 '<<'
+| 	     010 0011 '&&'
+| 	     010 0100 '||'
+| 	     010 0101 '='
+| 
+| 
+| XXXX.YSSS.AAAA.BBBB
+| 1101 1--- tttt ssss
+| 	    tttt Type
+| 		
+| 	    tttt Type
+| 	    0000 res word
+| 	    0001 object operators
+| 	    0010 ob extensions
+| 	    0011 object operators 'unknowns'
+| 	    0100 pmap operators
+| 	    0101 private handlers
+| 	    0110
+| 	    0111
+| 	    1000
+| 	    1001
+| 	    1010
+| 	    1011
+| 	    1100
+| 	    1101
+| 	    1110 magics
+| 	    1111 stoppers
+| 
+| 
+| 
+| XXXX.YSSS.AAAA.BBBB stoppers
+| 1101 1--- 1111 tttt
+| 
+| 		 tttt Type
+| 		 0000 end of object (action, object handler, etc.)
+| 		 0001
+| 		 0010
+| 		 0011
+| 		 0100
+| 		 0101
+| 		 0110
+| 		 0111
+| 		 1000
+| 		 1001
+| 		 1010
+| 		 1011
+| 		 1100
+| 		 1101
+| 		 1110
+| 		 1111
+| 		
+| 
+| XXXX.YSSS.AAAA.BBBB magics (0xD8E?)
+| 1101 1--- 1110 tttt
+| 	
+| 		 tttt Type
+| 		 0000 action
+| 		 0001 function
+| 		 0010 object header
+| 		 0011 object handler
+| 		 0100 structure
+| 		 0101
+| 		 0110
+| 		 0111
+| 		 1000
+| 		 1001
+| 		 1010
+| 		 1011
+| 		 1100
+| 		 1101
+| 		 1110
+| 		 1111
+| 
+| 
+| 
+
+[**				 INTERNALS LIST				     **]
+[**			  This part must be redefined			     **]
+
+** IF **
+
+IF
+  THEN 
+  ELSE
+ENDIF
+
+$xxxx Var header
+      IF type
+
+$xxxx IF size ( if no'else' IF size is full size ) (??)
+
+$xxxx ELSE size
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+## WHILE (...)
+## CLOSE WHILE;\WEND;
+
+--> while [(block0.case)]
+	  (block1) B O D Y
+	  close while.
+
+--> for [(block0.start)
+	 (block1.change)
+	 (block2.end)
+	]
+	 (block3) B O D Y
+     close for;
+
+--> do
+	(block0) B O D Y
+	until [(block1.case)];
+
+--> forever
+	(block0) B O D Y
+	close forever;
+
+--> if [(block0.value0
+	<operator>
+	(block1.value1)
+       ]
+        block.2  B O D Y 0
+       else
+	block.3  B O D Y 1
+       endif;\close if;
+
+--> swicth (block0.case)
+	case (<constant>):
+		(block0) B O D Y
+		break;
+	default:
+		(block0) B O D Y
+	 close switch;
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+variables disposals:
+
+[hhhh] IF-THEN
+
+BLOCK  IF block
+BLOCK  THEN block
+
+------------------------
+
+[hhhh] IF-THEN-ELSE
+
+BLOCK  IF block
+BLOCK  THEN block
+BLOCK  ELSE block
+
+------------------------
+
+[hhhh] WHILE-CLOSE WHILE
+
+BLOCK  WHILE block
+BLOCK  BODY block
+
+------------------------
+
+[hhhh] FOR-CLOSE FOR
+
+BLOCK  START block
+BLOCK  CHANGE block
+BLOCK  END block
+BLOCK  BODY block

@@ -1,0 +1,43 @@
+	; --- library calls
+	
+	; examples of how to declare functions
+	
+	libname doslib "dos.library"
+	libstruct doslib DosBase
+	
+	libcall Open
+	library doslib
+	offset -30
+	arg 0 d1 string
+	arg 1 d2 long
+	result bcpl
+	end
+	
+	libcall Close
+	library doslib
+	offset -36
+	arg 0 d1 bcpl
+	end
+	
+	libcall Read
+	library doslib
+	offset -42
+	arg 0 d1 bcpl
+	arg 1 d2 string
+	arg 2 d3 long
+	result long
+	end
+	
+	codefile cf "opera"
+	
+	codefun _get_obj
+	code cf hunk 1 full
+	end
+	
+	codefun _kill_obj
+	code cf hunk 1 from 400 to 800
+	end
+	
+	; boh!
+	alias _kill _kill_obj
+	alias _get _get_obj

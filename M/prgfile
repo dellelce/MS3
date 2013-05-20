@@ -1,0 +1,24 @@
+/* tony dee © 1992
+** 
+** struttura di un file d'un programma AMIGA
+** 
+** 
+*/
+
+[-$000003F3-]	Una LONG di identificazione di un programma
+[-$00000000-]	Una LONG vuota
+[-$xxxxxxxx-]	Il numero totale di hunk del file.
+[-$00000000-]	Una LONG vuota
+[-$xxxxxxxx-]	
+[-$xxxxxxxx-]	
+
+[-$xxxxxxxx-]	numero di LONG del'hunk (quindi DIMENSIONE = LONG * 4)
+[-$tttttttt-]	identificatore di tipo del'hunk
+
+[-$000003EA-]	LONG di identificazione di un hunk dati
+
+[-$000003EB-]	LONG di identificazione di un hunk di codice
+
+[-$000003EC-]	indica di 'references'
+
+[-$000003F2-]	indica la chiusura di un hunk

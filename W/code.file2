@@ -1,0 +1,30 @@
+#define	AND_IMM		%0000001000000000	
+#define	SUB_IMM		%0000010000000000
+#define	ADD_IMM		%0000011000000000
+#define	EOR_IMM		%0000100000000000
+#define	CMP_IMM		%0000101000000000
+
+#define	IMM_BYTE	%0000000000000000
+#define	IMM_WORD	%0000000001000000
+#define	IMM_LONG	%0000000010000000
+
+/*
+** put immediate value words in W1 and W2
+** 
+** 
+*/ 
+
+#define	ADDIR_B(b,r)	(W0 (b, ADD_IMM | IMM_BYTE | r))
+#define	ADDIR_W(b,r)	(W0 (b, ADD_IMM | IMM_WORD | r))
+#define	ADDIR_L(b,r)	(W0 (b, ADD_IMM | IMM_LONG | r))
+
+#define	CMPIR_B(b,r)	(W0 (b, CMP_IMM | IMM_BYTE | r))
+#define	CMPIR_W(b,r)	(W0 (b, CMP_IMM | IMM_WORD | r))
+#define	CMPIR_L(b,r)	(W0 (b, CMP_IMM | IMM_LONG | r))
+
+$0200	%0000*0010*0000*0000		ANDI.B	#0,D0
+$0400	%0000*0100*0000*0000		SUBI.B	#0,D0
+$0600	%0000*0110*0000*0000		ADDI.B	#0,D0
+$0a00	%0000*1010*0000*0000		EORI.B	#0,D0
+$0c00	%0000*1100*0000*0000		CMPI.B	#0,D0
+$0e00	%0000*1110*0000*0000		MOVE.S	D0	; ???

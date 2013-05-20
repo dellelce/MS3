@@ -1,0 +1,42 @@
+	/*********************************************************
+	 *********************************************************
+	
+	
+	 PROGRAM TRASLATIONS
+	
+	
+	 *********************************************************
+	 *********************************************************/
+	
+	
+	1.
+	  First each variable is referenced by a name
+
+	  When the processmap has been completely
+	  Traslated each variable is referenced by a number ( a UWORD like )
+	  
+	  a. When the traslator finds a name ( such as 'loop', '0.2', etc. )
+	     he checks what kind of name it is, it can be a number,
+	     a special ( such as ';', '{', '.' etc. ) and it can be a string,
+	     too. When it is a string, he checks if it is an internal 
+	     ( an instruction such as 'do', 'for', 'if' etc. ), or if
+	     it is a function ( a OS routine or a non-MS3 language routine ) or
+	     an action ( an already traslated routine or library routine )
+	     then he looks for it in the global vars names list, and to finish
+	     he looks in the local vars names list if yet not found, he consider
+	     it an 'UNKOWN' name
+	     
+	     All actions, objects, functions, globals will always have string
+	     reference a name
+	
+	
+	 -----------------------------------------------------------------------
+	  TRASLATE OBJECT
+	     |
+	     |
+	     +-> Give it a name and a number
+		|
+		|
+		+-> If found a call to that object he gives 
+		
+		THINGS TO BE CHECKED!

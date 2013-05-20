@@ -1,0 +1,22 @@
+/* MS3 language by tony dee 
+** 
+** 
+** 
+** 
+*/ 
+
+esempio di un handler privato:
+
+1.
+
+wait mywindow (xsize, ysize, ...);
+
+wait nome_oggetto (lista_attributi_d'attendere);
+
+
+2.
+
+load ifffile (name = filename, type = '8SVX');
+
+load nome_oggetto (attributi = definizione...);
+

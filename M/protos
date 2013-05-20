@@ -1,0 +1,287 @@
+/* 
+** proto: functions arguments description
+** 
+** actions no:
+** blocks.c:		 12
+** code.c:		  9
+** code1.c:		  3
+** data.c:		  8
+** data1.c:		  2	--> 34
+** data2.c:		  2
+** errors.c:		  1
+** functions.c:		  4
+** global.c:		  1
+** items.c:		  1	-->  9
+** libraries.c:		  2
+** names.c:		  3
+** names1.c:		  1
+** process.c:		  4
+** routines.c:		 20	--> 30
+** routines1.c:		 16
+** routines2.c:		  8
+** routines3.c:		  5
+** routines4.c:		  8
+** search.c:		  2	--> 39
+** startup.c:		  3
+** strcmp.c:		  1
+** tonylists.c:		  1
+** trace.c:		  1
+** traslate.c:		  3	-->  9
+** traslate1.c:		  5
+** traslate2.c:		  6
+** traslate3.c:		  3
+** traslate4.c:		  1
+** traslate5.c:		  3
+** utility.c:		  2
+** variables.c:		  5	--> 27
+** 
+** -------------------------
+** TOTAL FUNCTIONS NO:	148
+** 
+** empty functions not included
+** $ = function must be completed/changed/deleted
+** 
+** % blocks.c:
+** BLOCK	*newblock (UWORD)
+** BLOCK	*createblock (UWORD, UBYTE)
+** BOOL		 deleteloneblock (BLOCK *)
+** VOID		*makeroom (BLOCK *, ULONG)
+** $ UWORD	*ptrtoword (BLOCK *, VOID *)
+** BLOCK	*packblock (BLOCK *)
+** VOID		 deleteblockchain (BLOCK *)
+** VOID		 blockwrite (BLOCK *, UBYTE *, ULONG)
+** VOID		 bwritew (BLOCK *, UWORD)
+** ULONG	 lastusedbyte (BLOCK *)
+** VOID		*reallastbyte (BLOCK *)
+** BOOL		 freeblockarea (BLOCK *, WPTR, UWORD)
+** UWORD	*wordtoptr (BLOCK *, UWORD)
+** BOOL		 bwriteat (BLOCK *, WPTR, UWORD)
+** 
+** 
+** 
+** 
+** % code.c:
+** VOID		 branchat (BUNCH *, UBYTE, WPTR offs)
+** WRLIST	*createrlist (UWORD)
+** VOID		 dellab (LABEL *)
+** USHORT	 bcountused (GBUNCH *)
+** $ UWORD	 writegbunch (HC *, GBUNCH *)
+** BOOL		 makecode (GROUP *)
+** HUNK		*createhunk (HC *, UWORD words, UWORD model)
+** MAKEVAR	*makevar (VAR *)
+** VAR		*FindBlockEnd (VAR *)
+** 
+** 
+** % code1.c:
+** CODEN	*createcoden (PMAP *, UBYTE *)
+** VOID		 initregs (CODEN *)
+** BOOL		 newcall (GROUP *, TITEM *, UBYTE *)
+** BOOL		 findcall (GROUP *, UBYTE *)
+** 
+** 
+** % data.c:
+** FB		*CreateSingleBuf (UWORD)
+** FB		*BufOpen (GHANDLE * / TLIST *, UBYTE *, UWORD)
+** FB		*BufPack (FB *)
+** BOOL		 BufWrite (FB *, VOID *, ULONG)
+** VOID		 shiftleft (SNAME *, UWORD, BOOL)
+** SNAME	*NumToA (VOID *, ULONG, UWORD *)
+** 
+** 
+** % data1.c:
+** $ULONG	 WriteBufArea (UBYTE *, FB *, ULONG, ULONG)
+** $FB		*LoadUpBuf (ULONG, UBYTE *)
+** 
+** 
+** % data2.c:
+** VOID		*BufDelete (FB *)
+** BOOL		 BufSave (ULONG, FB *)
+** 
+** 
+** % errors.c:	
+** VOID		 rawtyperror (ULONG, UBYTE *)
+** 
+** 
+** % functions.c:
+** BOOL		 AllocFunction (GROUP *)
+** LPI		*ParserItem (LP *, UWORD)
+** PARSER	*ParseLine (UBYTE *)
+** LPARSE	*AllocLineParse (UWORD)
+** 
+** 
+** % global.c:
+** GHANDLE	*createghandle ()
+** 
+** 
+** % items.c
+** BOOL		 setitem (PMAP *, USHORT, USHORT, WPTR, WPTR)
+** ITEM		*newitem (PMAP *)
+** ITEM		*createitem (PMAP *)
+** 
+** 
+** % libraries.c
+** BOOL		 source (GROUP *)
+** LONG		 __addsourcef (GROUP *, NAME *)
+** 
+** 
+** % names.c:
+** VOID		 getnametype (GHANDLE *, PMAP *, SNAME *, NAME *)
+** VOID		 delname (NAME *)
+** BOOL		 createnb (GHANDLE *)
+** VOID		 addname (GROUP *, NNAME *)
+** 
+** 
+** % names1.c
+** NAME		*findname (NAMEBASE *, UBYTE *)
+** 
+** 
+** % process.c:
+** BOOL		 savepmap (UBYTE *, PMAP *)
+** PMAP		*loadpmap (UBYTE *)
+** VOID		 deletepmap (PMAP *)
+** PMAP		*createpmap (ULONG)
+** 
+** 
+** % routines.c:
+** FH		*hopen (GHANDLE *, UBYTE *)
+** VOID		 hclose (GHANDLE *, FH *)
+** BOOL		*hclosedown (TLIST *)
+** VOID		*hnextblock (FH *)
+** UBYTE	 hget (FH *)
+** VOID		 goback (FH *)
+** SNAME	*createsname (UWORD)
+** BOOL		 hskipblank (FH *)
+** BOOL		 getrawstr (FH *, UBYTE *, UBYTE)
+** VOID		 hgetname (FH *, SNAME *, $ULONG)
+** BYTE		*getanumber (FH *, SNAME *)
+** BOOL		 getalphaname (GHANDLE *, FH *, UBYTE *)
+** BOOL		 getspecial (FH *, NAME *)
+** SNAME	*createsname (UWORD)
+** VOID		 delsname (SNAME *)
+** 
+** 
+** % routines1.c:
+** 
+** SSTACK	*createsstack (UWORD)
+** BOOL		 delsstack (SSTACK *)
+** BOOL		 addstatus (SSTACK *, STATUS, WPTR)
+** UWORD	 getstatus (SSTACK *, UWORD)
+** BLOCK	*loadblock (UBYTE *, UWORD)
+** BOOL		 getname (GROUP *)
+** $ VOID	 freesname (SNAME *)
+** BOOL		 putstring (GROUP *, UBYTE *, UBYTE)
+** VOID		 warn (GHANDLE *, ULONG, UBYTE *)
+** BOOL		 countactionvardefs (GROUP *, UBYTE *, UWORD)
+** VOID		 toup (UBYTE *)
+** LABEL	*createlabel (GROUP *, TITEM *, UBYTE *)
+** 
+** 
+** % routines2.c:
+** BOOL		 boxfind (STRBOX *, UBYTE *)
+** UWORD	 wbound (UWORD, UWORD, UWORD)
+** VOID		*realp (BLOCK *, WPTR)
+** ITEM		*findinblock (BLOCK *, PMAP *, UBYTE *)
+** CIBOX	*joincibox (CIBOX *, CIBOX *, BOOL)
+** $ CIBOX	*countcalls (GROUP *, CIBOX *, BLOCK *, UWORD *, UWORD *,
+** 			      UWORD)
+** $ BOOL	 writevarinfo (BLOCK *, VARINFO *)
+** $ VOID	*getdefinition (PMAP *, ITEM *)
+** 
+** 
+** % routines3.c:
+** $ NBH	*getline (GROUP *, NBH *)
+** TITEM	*newtitem (GROUP *, ULONG, UWORD, BLOCK *)
+** UBYTE	*findstructitem ($ WSTRUCT *, UBYTE *)
+** WSTRUCT	*openworkstruct (PMAP *, UBYTE *)
+** USHORT	 wstrgetitems (WSTRUCT *)
+** 
+** 
+** % routines4.c:
+** VOID		 removegroup (GROUP *)
+** VOID		 addname (GROUP *, NNODE *)
+** BOOL		 putsimpledeftype (GROUP *, BLOCK *, VARINFO *)
+** BOOL		 pmopnotavail (GROUP *)
+** BOOL		 headerdef2use (GROUP *, VARINFO *, ULONG)
+** BOOL		 getvartype (VARINFO *, VAR *)
+** BOOL		 getvarrealsize (BLOCK *, VARINFO *, VAR *)
+** BOOL		 putsimpledefsize (GROUP *, BLOCK *, VARINFO *)
+** 
+** 
+** % search.c:
+** VOID		*mapfind (VOID *, UBYTE *)
+** STRNODE	*listfind (LISTH *, UBYTE *)
+** 
+** 
+** % search1.c:
+** ITEM		*findinlib (LIBRARY *, UBYTE *)
+** LABEL	*findlabel (GROUP *, UBYTE *)
+** 
+** 
+** % startup.c:
+** $ BOOL	 getstartupenv (_FLAG *)
+** BOOL		 getargs (_FLAG *)
+** BOOL		 makearg (_FLAG *, UBYTE *, UBYTE *)
+** 
+** 
+** % strcmp.c:
+** BOOL		 strcmp (UBYTE *, UBYTE *)
+** 
+** 
+** % tonylists.c:
+** BOOL		 freenode (TLIST *, TNODE *)
+** 
+** 
+** % trace.c:
+** BOOL		 lifetrace (TRCARGS *)
+** 
+** 
+** % traslate.c:
+** BOOL		 traslatepmap (GROUP *, UBYTE *)
+** BOOL		*setconstant (GROUP *)
+** BOOL		 skipaline (GROUP *)
+** 
+** 
+** % traslate1.c:
+** BOOL		 setvardef (VARBUILD *)
+** BOOL		 getvardef (GROUP *, NAME *, BLOCK *, UWORD)
+** BOOL		 getvaruse (GROUP *, NAME *, BLOCK *)
+** 
+** 
+** % traslate2.c:
+** BOOL		 dounknown (GROUP *, ASTAT *)
+** BOOL		 makeobject (GROUP *)
+** BOOL		 getexpression (GROUP *, BLOCK *, NAME *, NAME *, BOOL)
+** BOOL		 makestarter (GROUP *)
+** BOOL		 getginit (GROUP *, BOOL, BOOL)
+** BOOL		 makeaction (GROUP *)
+** 
+** 
+** % traslate3.c:
+** BOOL		 makestructure (GROUP *)
+** BOOL		 getmatrix (GROUP, $ VARBUILD *, UWORD)
+** BOOL		 getinit (GROUP *, INIT *)
+** 
+** 
+** % traslate4.c:
+** BOOL		 hearttraslate (GROUP *, NAME *, UWORD)
+** 
+** 
+** % traslate5.c
+** BOOL		 __obj_create (GROUP *, VARINFO *)
+** BOOL		 __obj_open (GROUP *, VARINFO *)
+** BOOL		 gatanycall (GROUP *, NAME *, UWORD, WPTR, BLOCK *)
+** 
+** 
+** % utility.c:
+** BOOL		 showdir (UBYTE *, PMAP *)
+** BOOL		 showfile (UBYTE *)
+** 
+** % variables.c:
+** VNODE	*addvarl (GROUP, ULONG, VAR *)
+** UWORD	 resetvlist (GHANDLE *, ULONG)
+** ITEM		*findindir (PMAP *, UBYTE *)
+** VAR		*findinvlist (PMAP *, VLIST *, UBYTE *)
+** BOOL		 writevarinfo (BLOCK *, VARINFO *)
+** 
+** 
+*/

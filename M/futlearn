@@ -1,0 +1,19 @@
+	Process: Learning (FOR FINAL RELEASE OF THE MS3 COMPILER)
+
+ 	1. new form of data (still to be checked/defined)
+
+	2. alteration of old data
+
+	3. integration of old data
+
+--------------------------------------------------------------------------------
+
+	2. alteration of old data
+
+		a. newset (variable name, new value)
+	
+		b. freeset (variable name)
+	
+	3. integration of old data
+	
+	  	a. addset (matrix/vector name, new value)

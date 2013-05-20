@@ -1,0 +1,29 @@
+; 
+; costanti di definizione
+; di un programma
+; 
+; 
+   
+   
+1. presenza di variabili stack
+   
+   
+2. uso di variabili-registro
+   
+   
+3. chiamate ad azioni
+   
+   
+4. chiamate a funzioni
+   
+   
+5. acesso a strutture
+   
+   
+6. uso del puntatore a librerie
+   
+   
+7. uso del puntatore a dati globali (raro>
+   
+   
+   

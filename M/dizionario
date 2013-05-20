@@ -1,0 +1,21 @@
+		        Dizionario del Linguaggio MS3
+--------------------------------------------------------------------------------
+Vocabolo	+ Informazioni
+--------------------------------------------------------------------------------
+ProcessMap	  Una struttura usata per l'archiviazione di data riguardanti
+		  il programma in traduzione.
+		  Puo' essere usata anche come una libreria.
+
+Hunk		  Una struttura usata per l'archiviazione di codice macchina.
+		  La sua unita' di archiviazione di base e' l'UWORD
+		  ( == unsigned word ) usata per il modo di modellare le 
+		  istruzioni del linguaggio macchina del 68000.
+		  Non ci dovrebbero essere problemi per l'uso in altri
+		  processori.
+
+DataHunk	  Come 'Hunk', ma 'DataHunk' viene usata solo per
+		  l'archiviazione di data.
+
+--------------------------------------------------------------------------------
+
+Vocaboli: 3

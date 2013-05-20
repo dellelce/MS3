@@ -1,0 +1,211 @@
+{<--- special remarks --->}
+
+PMAP writing
+
+1:write info
+2:new object
+3:init object	{last object created}
+4:exit		{automatically write closer}
+
+{PM:1  ////  PM:2  ////  PM:3  //// PM:4}
+
+MS3 levels
+
+
+level:name...permitted objects
+
+
+1:external
+	{var definition-always global and static,
+	structure definition,
+	action def...}
+
+2:object naming {and setting of type}
+
+3a:level type header
+	{unknown- value-setting,
+	var- value-setting,
+	cycle header- new loop [(conditioning expression)],
+
+3b:get list of variables %%% (for structures and objects)
+
+4:last
+	{get var-body
+	get expression list}
+
+
+valuation = evaluate (name, filter, level);
+
+yes/no = put (place, status, valuation);
+
+
+sqeezed_name = squeeze (name);
+
+
+evaluate () {needed to create a pmap.... a new idea...}
+
+CACHE=		-->	keep in mind name
+
+?CACHE=		-->	checks if status is ....
+
+!CACHE=		-->	status must be ... otherwise ERROR!
+
+'-->'		-->	continue (that's ok)
+
+ERROR		-->	oops, get out of logic loop
+
+++		-->	other data....
+
+<<		-->	current data
+
+vdd=VarDefData	-->	all data needed to make a variable but the name; 
+
+sdd=StrDefData	-->	all data needed to make a structure
+
+odd=ObjDefData	-->	all data needed to make an object (at least one 
+			attribute and one handler)
+
+Y:		-->	YES: if YES...
+
+N:		-->	NO: if NO...
+
+.		-->	'and ...', alias do following things too
+
+=		-->	.. is just like ..
+
+..		-->	a list of ...
+
+LN		-->	last name
+
+STRUCT-DEF	-->	defining a structure (met 'struct' token)
+
+OBJ-DEF		-->	defining an object (met 'object' token)
+
+ADD()		-->	add {traslated} information to the pmap
+			if taken from the cache it will be like if POPpin' it
+
+/		-->	another instruction
+
+PMS(t)		-->	creates a PMAP structure of the 't' kind
+
+
+'CACHE=unknown' will add a 'STRING' to the CACHE_string vector
+
+
+level		token		cache		result
+
+L:1		varname				ERROR
+L:1		var definer			CACHE=<</-->
+L:1		object definer			:2/CACHE=OBJDEF/-->
+L:1		struct definer			:2/CACHE=STRUCTDEF/-->
+L:2		unknown		STRUCT-DEF	?CACHE=STRUCTDEF/Y:
+						CACHE=unknown/PMS(STRUCT)/
+						3b:/-->
+L:2		unknown		OBJ-DEF		?CACHE=OBJDEF/Y:CACHE=unknown/
+						PMS(OBJ)/3b:/-->
+L:3b		var definer	++/STRUCT-NAME	ADD(CACHE)
+L:3b		unknown		vdd		?CACHE=vdd/Y:PUT(LN+vdd).
+						-->/N:ERROR
+L:3b		
+--------------------------------------------------------------------------------
+
+GET/SETFLAGS	++++|++++|++++|++++|++++|++++|++++|++++
+		T--- ---- ---- ---- ---- ---- ---- ----
+
+		T = 0 for first flags....
+		
+		T = 1 for secondary flags....
+		
+		
+		Totally you have 62 flags!
+		
+
+struct any_STRING
+{
+UBYTE	*as_String;
+WPTR	*as_StrOffset;
+} STRING;
+
+
+typedef struct workplace
+{
+PMAP	*wp_HomePmap;	/* optional	*/
+BLOCK	*wp_HomeBlock;
+WPTR	 wp_Place;
+} PLACE;
+
+
+
+#define	CACHESIZE	64
+
+typedef struct group
+{
+STATUS		 g_Status;
+ULONG		 g_Flags [1];
+TOKEN		*g_Token;
+ULONG		 g_Level;
+UWORD		 CACHE_usages [3];
+UWORD		 CACHE_small;
+STRING		 CACHE_string [CACHESIZE];
+VARINFO		 CACHE_varinfo [CACHESIZE];
+NAME		 CACHE_name [CACHESIZE];
+} GROUP;
+
+#define	CST_STRUCTDEF	0x0001
+#define	CST_OBJDEF	0x0002
+#define	CST_ACTDEF	0x0003
+#define	CST_
+#define	CST_
+#define	CST_
+
+
+
+TOKEN *
+_TOKEN (group)
+GROUP	*group;
+{
+TOKEN	*token;
+
+if (IS_ON (GETFLAGS (group, CACHED_TOKEN)))
+	{
+	token = _LASTTOKEN (group);
+	CLEANFLAGS (group, CACHED_TOKEN);
+	
+	goto step_0000;
+	}
+
+token = GETTOKEN (group);
+
+return (token);
+}
+
+
+
+
+
+
+BOOL
+evaluate (GROUP)
+GROUP	*group;
+{
+TOKEN	*token;
+
+if (IS_ON (GETFLAGS (group, CACHED_TOKEN)))
+	{
+	token = _LASTTOKEN (group);
+	CLEANFLAGS (group, CACHED_TOKEN);
+	
+	goto step_0000;
+	}
+
+token = GETTOKEN (group);
+
+if (token = 0L)
+	{
+	goto error_Background;
+	}
+
+step_0000:;
+
+/* to be continued	*/
+}

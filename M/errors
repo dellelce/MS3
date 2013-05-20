@@ -1,0 +1,39 @@
+MS3 Language list of errors
+--------+-----------------------------------------------------------------------
+Error #	 Error string and info
+--------+-----------------------------------------------------------------------
+  1	 "variable already defined"
+
+	 The name of the variable you are trying to use has been already used.
+
+  2	 "object already defined as a global variable"
+
+	 The name of the variable you are trying to use has been already used
+	 as a global one.
+
+  3	 "not a processmap file"
+
+	 File does not contain a processmap segment or it is not TFF file.
+
+  4	 "out of memory"
+
+	 There is not enough memory to carry out a certain operation.
+
+  5	 "object already defined as an action"
+
+
+  6	 "object already defined as an MS3 object"
+
+
+  7	 "missing 'attributes' declaretion'
+
+
+  8	 "'attributes' declaretion must contain at last one attribute name"
+
+
+  9	 "unknown object"
+
+
+ 10	 "no library file"
+
+ 11	 "illegal argument passed"

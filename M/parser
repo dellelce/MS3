@@ -1,0 +1,44 @@
+parser:
+
+funzione del compilatore che permettono di 'tagliuzzare' il flusso di caratteri
+(alias file ascii) che contiene il programma in stringhe che possono avere un
+certo valore per il compilatore, e poi dare in cambio di 'questa stringa'
+trovata dei valori numerici. 
+Praticamanente il parser viene attivato dalla funzione getname ().
+Tramite l'uso del parser è possibile seguire la struttura del programma MS3
+quindi interpretarlo e tradurlo.
+
+
+struttura parser:
+	
+	
+livello 0:
+	analisi dei caratteri, questo livello permette di riconoscere se un
+	carattere è numerico, alfabetico o speciale ('=','+', ecc.)
+	In questo livello sono interessati i file:
+	can.h (macro), can.c ('vettori con i dati identificativi')
+	
+livello 1:
+	secondo il tipo di carattere incotrato durante la lettura del file
+	contenente si ha un diverso comportamento.
+	
+	Ad esempio se si incontra un carattere di tipo numerico, una
+	'sub-routine' si occuperà di leggere il flusso di carattere (alias,
+	file) finche non si incontra la sua fine (un carattere non numerico o
+	'invalido')
+
+livello 2:
+	la stringa ottenuta dal livello 2 viene cercata nei vari vettori (per le
+	parole riservate del compilatore) e nelle varie liste ('azioni', 
+        'funzioni', variabili globali, locali ed altre), darà come risultato (è
+	da considerare che il parser è una funzione C) dei certi valori che ne
+	descrivono la tipologia (nome, posizione, tipo (ad es.: parola
+	riservata), sotto-tipo (ad es.: 'if').
+ 
+
+nota:	per il parser del compilatore MS3 i caratteri vengono classificati in
+	tre differenti tipi:
+	1 numeri
+	2 caratteri alfabetici
+	3 caratteri 'speciali' (segni di punteggiatura e vari)
+	4 caratteri 'fuori-casta' (minori di 32, maggiori di 128)

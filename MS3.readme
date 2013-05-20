@@ -1,0 +1,67 @@
+This is the rest of a my idea:
+
+MS3
+
+It is a language I started developing in
+in 1990, but I had to understand that there
+was no place for it in the market (in any market)
+so I decided that it was better to give it for
+free, then to get it lost.
+
+You can do whatever you like with this routines 
+but you have to consider that if you want to
+finish it you should get in touch with me (if you
+of course want to complete it as I tought of it).
+    
+I am ready to give you any help. 
+
+Antonio Dell'elce
+Email: uh886@freenet.victoria.bc.ca (updated Jan 14, 1996)
+
+My address:
+Via colle della fonte 53
+66030 FRISA CH
+ITALY
+
+-------------------------------------------------
+
+Some info on the language I was develoing:
+
+MS3 is based on `objects` where for object
+are meant a set group togheter just like a C
+structure but unlike C structures MS3 objects`
+attributes are just logically togheter.
+
+The place where they are depends from the
+`handlers`: each object as at least this 
+handlers:
+
+open, create, delete, close, ask, modify
+
+open	As the name points, it opens an object
+	that means that the object must already
+	exists.
+	The syntax is: open object-var (attribute0 =
+	x0, attribute1 = x1 etc)
+
+create  Just the same of open but instead of open
+	the object is considered not to exist.
+	The syntax is the same of open.
+
+delete
+close
+	They do identical things, the first deletes the
+	object It is considered not to exist.
+	The second close only access to object, but the object
+	is considered to survive.
+
+ask	Queries for an object attribute value
+	It has a differnt syntax than the others:
+	value = object-var (attributename)
+
+These are the standard `handlers` you can add other handlers
+for example `wait` when checking for changes to the object 
+made from other process (`waits for an event`)
+
+If you want more information about the objects, language or
+everything else please get in touch.

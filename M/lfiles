@@ -1,0 +1,43 @@
+file		+ attributes
+----------------+---------------------------------------------------------------
+blocks.c	| routines regarding code management
+blocks.h	| definitons regarding blocks
+can.c		| character analyzer data
+can.h		| definitions for character analyzing
+code.c		| first code file
+code.h		| file containing definition for coding
+code1.c		| second code file
+codef.h		| code file definition
+data.c		|
+data.h		|
+errors.c	|
+errors.h	|
+fast.h		|
+flags.h		|
+functions.c	|
+functions.h	|
+global.c	|
+globalhandle.h	|
+internals.h	|
+items.h		|
+logics.h	|
+maincode.c	|
+ms3.h		|
+namearchive.c	|
+names.h		|
+process.c	|
+routines.c	|
+routines1.c	|
+routines2.c	|
+strcmp.asm	|
+strcmp.c	|
+tonyextend.h	|
+tonyf.h		|
+tonylists.c	|
+tonylists.h	|
+traslate.c	|
+traslate.h	|
+traslate1.c	|
+utility.c	|
+variables.h	|
+worklocals.h	|

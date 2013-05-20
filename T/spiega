@@ -1,0 +1,50 @@
+Maurizio:
+
+	ti mando parte dei file del mio compilatore (MS3 language compiler)
+	(solo di pochi di loro commentati), in più alcuni listati di 
+	un compilatore C chiamato 'SmallC' che descrive appunto un 
+	'piccolo' compilatore C, creato non da me (iniziano con 'CC').
+	
+	ATTENZIONE: ti spedisco il tutto in due 'lettere'...
+		    una precisazione dei contenuti più altri file
+		    ti spedirò tra poco.
+	
+
+strcmp.c:	veloce 'comparatore' di stringhe
+strcmp.asm:	lo stesso di sopra (è stato ottenuto compilando lo stesso
+					e modificandolo in modo che sprecasse
+					meno CPU)
+	
+	questa versione è stata da me ideata tenendo in mente che:
+	nel compilatore 'strcmp ()' sarà usato per
+	ricerche in liste dove solo una stringa sarà
+	uguale a quella cercata.
+	
+	strcmp () inizia confrontando le prime LONGWORD, se esse sono
+	uguali controlla se le 4a cifra è zero, se esso è zero allora
+	si tratta di 2 strighe di lunghezza tre uguali, se esso non
+	è zero strcmp () continua controllando gli altri caratteri
+	delle stringhe; se le prime LONGWORD non sono uguali
+	strcmp () controlla le prime WORD se anche esse non sono
+	uguali la funzione esce e ritorna un FALSE.
+	La funzione strcmp () cosi come riscritta dovrebbe aiutare
+	ad una ricerca veloce dei 'name' (o 'token' come li avrei dovuto
+	più giustamente chiamare).
+	
+	
+wsystem.h:
+	
+	contiene le definizioni di base del compilatore, (insieme ad alcuni
+	definizioni per interfacciarso ad Amiga) dovrebbe facilitare la.
+	portabilita verso altr sistemi
+	
+	
+traslate4.c:
+
+	contiene il 'cuore del compilatore'
+
+
+analisi del parser:
+	
+	
+	alle basi del parser c'è l'analizzatore di caratteri ('livello 0')

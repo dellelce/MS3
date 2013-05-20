@@ -1,0 +1,15 @@
+Il compilatore MS3 divide le stringhe in due tipi: di lavoro e di programma.
+
+quelle di lavoro sono: nomi di variabile, di azioni, di funzioni ecc..
+
+quelle di programma: sono tutte quelle che alla fune andranno nel file
+eseguibile. Normalmente esse sono raccolte tra apici.
+
+Ad esempio l'espressione MS3:
+
+pippo = "La vita non finisce così";
+
+contiene entrambi i tipi di stringhe:
+'pippo', nome della variabile, è una stringa di lavoro.
+"La vita non finisce così", è una stringa di programma, in quanto
+essa andrà a finire nel eseguibile stesso.

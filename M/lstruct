@@ -1,0 +1,203 @@
+tony dee © 1992
+presents the MS3 compiler list of structures
+
+
+blocks.h:
+Block				<BLOCK>
+
+
+calls.h:
+CallBox				<CBOX>
+Call				<CALL>
+
+code.h:
+hunk				<HUNK>
+HunkC				<HC>
+bunch				<BUNCH>
+groupofbunches			<GBUNCH>
+Register			<REG>
+RegMap				<RMAP>
+References			<HREF>
+Ref				<>
+Program				<PROGRAM>
+ReplacementTag			<RTAG>
+ReplacementList			<RLIST>
+datahunk			<DHUNK>
+CodeAction			<CACTION>
+CLabelList			<CLL>
+MakeVariable			<MAKEVAR>
+CodeEnvironment			<CODEN>
+polish				<POLISH>
+
+
+codevars.h:
+CodeVariable			<CODEVAR>
+
+
+codef.h:
+prgwritehanlde			<PRGWH>
+
+
+data.h:
+BufName				<BNAME>
+FileBuf				<FB>
+
+
+functions.h:
+Function			<FUNCTIONS>
+LibCall				<LIBFUN>
+BinaryFunction			<BFUN>
+IntFunction			<INFUN>
+_fs_vec				<FS>
+_line_parser_item		<LPI>
+_line_parser			<LP>
+_line				<LIN>
+
+
+ghandle.h:
+GlobalHandle			<GHANDLE>
+
+
+items.h:
+DirItem				<ITEM>
+
+
+labels.h:
+Hit				<HIT>
+CodeLabel			<LABEL>
+
+
+logics.h:
+Object				<OBJECT>
+StatusStack			<SSTACK>
+TraslateItem			<TITEM>
+ProcessEnvironment		<PROENV>
+Couple				<COUPLE>
+group				<GROUP>
+CallInfo			<CALLINFO>
+
+$ _str				<STR>
+$ _string_box			<STRBOX>
+$ _data_flag			<DFLAG>
+
+
+names.h:
+NameDes				<NAME>
+StrName				<SNAME>
+NameVecArchive			<NAMEVEC>
+NameListHeader			<NLIST>
+Library				<LIB>
+NameBase			<NBASE>
+NameBox				<NBOX>
+NameBoxHeader			<NBH>
+
+procmap.h:
+ProcessMap			<PMAP>
+
+progstruct.h:
+__hunk_data			<H_DATA>
+__hunk_code			<H_CODE>
+__hunk_bss			<H_BSS>
+
+
+routines4.c:
+_sourcedirs			<SD>
+
+
+spex.h:
+subspecial			<SUBSPEC>
+special				<SPEC>
+speccase			<SPCASE>
+
+
+startup.h:
+flag				<_FLAG>
+_arg_node			<AN>
+messie				<MESSIE>
+
+
+structures.h:
+Structure			<STRUCT>
+wstructitemname			<WSINAME>
+wstruct				<WSTRUCT>
+
+
+tonyf.h:
+FileHead			<FHEAD>
+FileSegHead			<FSHEAD>
+fh				<FH>
+Directory			<DIR>
+
+
+tonylists.h:
+TonyNode			<TNODE>
+TonyList			<TLIST>
+maphead				<MAPH>
+listhead			<LISTH>
+strnode				<STRNODE>
+
+
+trace.h:
+trace_args			<TRCARGS>
+vartracebuff			<VTB>
+ActionTrace			<ACTRC>
+ATBox				<ATBOX>
+ATBContainer			<ATBC>
+trace_var			(TVAR>
+tracevarvector			<TVV>
+
+
+traslate.h:
+varbuild			<VARBUILD, METAFORM, MFROM)
+VBB2TOKEN			<V2T>
+init				<INIT>
+
+traslate.c:
+VarTag				<>
+
+
+vardefs.h:
+varu				<VARU>
+VarList				<VLIST>
+VarListNode			<VNODE>
+_work_var			<WVAR>
+_var_info			<VARINFO>
+ExpressionData			<EXPRDATA>
+
+
+		*** ***	COUNTING OF STRUCTURES	*** ***
+
+
+blocks.h:		  1
+calls.h:		  2
+can.h:			  0
+code.h:			 17
+codevars.h:		  1	-->	21
+codef.h:		  1
+codefast.h:		  0
+data.h:			  3
+errors.h		  0
+functions.h:		  8	-->	12
+ghandle.h:		  1
+internals.h:		  0
+items.h:		  1
+labels.h:		  2
+logics.h:		 10	-->	14	-->	46
+ms3fn.h:		  0
+names.h:		  8
+procmap.h:		  1
+progstruct.h:		  3
+routines4.c:		  1	-->	14
+spex.h:			  3
+startup.h:		  3
+structures.h:		  3
+tonyextend.h:		  0
+tonyf.h:		  4	-->	13
+tonylists.h:		  5
+trace.h:		  5
+traslate.c:		  1
+traslate.h:		  3
+variables.h:		  6	-->	20	-->	47
+
+
+total structures no.:	 91

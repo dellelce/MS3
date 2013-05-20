@@ -1,0 +1,15 @@
+The MS3 compilere $divides strings in 2 kinds: work and program ones.
+
+work strings are: variables names, actions', functions', etc..
+
+program strings are: all that strings that will end up in the executable file.
+Usually all program strings $(are between) $apici.
+
+For example the MS3 expression:
+
+jerry = "My life won't end this way!";
+
+has both kinds of strings:
+'jerry', the variable name, is a work string.
+"My life won't end this way!", is a program string, since
+it will end up in the executable file.

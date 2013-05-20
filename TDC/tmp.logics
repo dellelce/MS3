@@ -1,0 +1,50 @@
+/*
+** ---- td: I forgot next structures meaning, but I think they are for
+** 	    reserved for archiving...
+** 
+** # _str
+** # STR
+** 
+
+#define	STR			struct _str
+#define	STRSIZE			OBSIZE (STR)
+
+typedef struct _str
+{
+STR	*next;
+UBYTE	*str;
+LONG	 size;
+};
+
+
+
+** # _string_box
+** # STRBOX
+** 
+** 
+
+typedef struct _string_box
+{
+UWORD		 count;
+TLIST		 _strings[25];
+} STRBOX;
+
+#define	STRBOXSIZE		OBSIZE (STRBOX)
+#define	STRINGS(x)		x->count
+#define	_STR(x,y)		x->_strings[(UWORD) (y-64)]
+
+
+** # _data_flag
+** # DFLAG
+** 
+**  
+
+typedef struct _data_flag
+{
+WPTR		df_Name;
+WPTR		df_Id;
+FLAG		df_Status;
+} DFLAG;
+
+** 
+*/ 

@@ -1,0 +1,43 @@
+; 
+; What is an MS3 object?
+; 
+; by tony dee
+; 
+; 
+
+An MS3 object is composed of a set of 'attributes', which are meant to represent
+all natural objects, under the MS3 language there are different actions that can
+be effected $onto an object, {an object for example can be 'opened', i.e. make
+known to the program, it is used}
+They are:
+
+- open
+	
+	gets the 'knowledgement' of the object, after 'opening' the object you
+	will be able to ask about its attributes values, modify them, or just
+	kill it
+
+- create
+	
+	creates a new object, the object did not exist or if existed, it will be
+	replaced by the new object ($according to the handler).
+	
+- modify
+	
+	permits you to change an object attribute (usually more attributes are
+	modified at same time)
+	
+- close
+	
+	closes an object, the object is no more available and it can be modified
+	and neither it can be asked its attributes status
+	
+- delete
+	
+	object just no longer exists
+	
+- ask
+	permits you to know an attribute value; this is atypical compared to
+	others, it has another form:
+		objname (attribute name) {currently it is being changed to
+					the object.attributename form....

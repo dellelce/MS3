@@ -1,0 +1,35 @@
+	This file contains definition about the problem of Resident programs
+	in multitasking systems (a resident program should not modify its
+	data, but usually a program do modifies itself!).
+	
+	this is a 'Pure' semaphore:
+	psem mygirlpicturelock;
+	
+	>> pslock(mygirlpicturelock); (fun/act name still not definitive)
+	
+	   this action/function (?) will lock resource called
+	   'my*girl*picture'
+	
+	>> pscheck(mygirlpicturelock)
+	
+	   this act/fun will check if the resource can be modified or not
+	   (you can modify it the same, but you could cause a crash acting
+	   this way)
+	
+	>> psunlock(mygirlpicturelock)
+	
+	   this act/fun will lock resource called
+	   'my*girl*picturelock'
+
+	
+	'pure' semaphores can be used in two different ways:
+	
+	1. semaphores that can be used for data needing to be set a first time
+	   and then on does not need any other change, these kind of semaphores
+	   can be called static sems. these are the mostly used ones.
+	
+	2.
+	
+	   semaphores used by tasks when modifying data that later will be
+	   reset to the old form. these will be the least used ones and perhaps
+	   not used at all!

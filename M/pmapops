@@ -1,0 +1,81 @@
+; tony dee © 1992
+; 
+; processmap operators
+; 
+; 
+
+*
+*
+* replace (object, location, newattributes)
+*
+*
+
+replace (xbase, starter, pointer unsigned long)
+
+*
+*
+* mreplace (oldattributes, newattributes)
+*
+*
+
+mreplace (long, unsigned long)
+
+*
+*
+* restring (oldstring, newstring)
+*
+*
+
+restring ("Ciao!", "Bye!")
+
+*
+*
+* init (object, location, value)
+*
+*
+
+init (citta', starter, ("Roma", "Milano", "Venezia"))
+
+*
+*
+* insert (location, sublocation, object)
+*
+*
+
+insert (CallDos, startup, pointer Lock lock)
+
+*
+*
+* remove (object, location)
+*
+*
+
+remove (citta', starter)
+
+*
+*
+* insertline (location, sublocation, line)
+*
+*
+
+insertline (CallDos, startup, c = t)
+
+*
+*
+* removeline (location, line number)
+*
+*
+
+removeline (CallDos, 3)
+
+*
+*
+* removezone (location, start_label, end_label)
+*
+*
+
+removezone (CallDos, _inizio, _fine)
+
+**
+** - - -  END  - - -
+**

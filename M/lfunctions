@@ -1,0 +1,112 @@
+NO.	FUNCTION NAME	    FILE	    REMARK
+--------------------------------------------------------------------------------
+      1	hopen		    routines.c    opens a read only ascii file
+      2	hclose		    routines.c    closes a read only ascii file
+      3	hnextblock	    routines.c    gets next block from a file
+      4	hget		    routines.c    gets a character from a file
+      5	goback		    routines.c    rewind by a character
+      6	createname	    routines.c    creates a 'NAME' structure
+      7	hskipblank	    routines.c    skips all unused characters
+      8	newitem		    routines.c	  
+      9	getrawstr	    routines.c	  
+     10	hgetname	    routines.c	  
+     11	getanumber	    routines.c	  
+     12	getaname	    routines.c	  
+     13	getspecial	    routines.c	  
+     14	newblock	    blocks.c	  
+     15	createblock	    blocks.c	  
+     16	makeroom	    blocks.c	  
+     17	packblock	    blocks.c	  
+     18	deleteblockchain    blocks.c	  
+     19	blockwrite	    blocks.c	  
+     20	branchat	    code.c	  ! creates 68K branch instruction
+     21	seterror	    errors.c	  
+     22	createghandle	    global.c	  
+     23	- delghandle	    global.c	  
+     24	getnametype	    names.c	  gets a name type
+     25	savepmap	    process.c	  
+     26	loadpmap	    process.c	  
+     27	packpmap	    process.c	  
+     28	createpmap	    process.c	  
+     29	deletepmap	    process.c	  
+     30 createsname	    routines.c	  
+     31 hclosedown	    routines.c	  
+     32 writeseg	    code.c	  to be remade
+     33 createcf	    code.c	  to be remade
+     34 createwrlist	    code.c	  
+     35 bwritew		    blocks.c	  
+     36	encode		    codemain.c    on works
+     37	traslatepmap	    traslate.c    on works
+     38 addvarl		    routines.c    adds a variable to a varlist
+     39 resetvlist	    routines.c    clears a variable list
+     40 findindir	    routines.c    finds an item in directory
+     41	delsname	    routines.c    deletes a SNAME structure
+     42 makeaction	    traslate.c    creates an action
+     43	makeobject	    traslate.c    creates an object
+     44 makestructure	    traslate.c    creates a structure
+     45 lastusedbyte	    blocks.c      get last use of a block list in WPTR
+     46	createsstack	    routines1.c   creates a status stack
+     47 addstatus	    routines1.c   add a 'status' in a sstack
+     48 createitem	    routines1.c   creates a directory item
+     49	- freelaststatus    routines1.c   kills last status in sstack
+     50 findinblock	    routines2.c	  
+     51 delsstack	    routines1.c   deletes a 'Status Stack '
+     52 loadblock	    routines1.c   loads a block
+     53 findinlib	    routines1.c   finds an 'item' from a lib (SPECIAL)
+     54 freeblockarea	    blocks.c	  frees a block zone
+     55 getname		    routines1.c   gets a name and its type description
+     56 createcoden	    code1.c	  creates code environment
+     57 createmove	    code1.c	
+     58 freesname	    routines1.c
+     59 setconstant	    traslate.c
+     60	traslatesimpledef   traslate.c
+     61 putstring	    routines1.c
+     62	warn		    routines1.c
+     63 reallastbyte	    blocks.c      returns last byte in standard pointer
+     64 realp		    routines2.c   turns WPTR into a real pointer
+     65 countactionvardefs  routines1.c   counts variable defs in an action
+     66 * CreateSingleBuf   * data.c
+     67 * BufOpen	    * data.c
+     68 * BufPack	    * data.c
+     69 * BufWrite	    * data.c
+     70 initregs	    code1.c
+     71 dellab		    code.c
+     72	* BufDelete	    * data.c
+     73 * BufPrint	    * data.c
+     74 * NumToA	    * data.c	  turns an integer no to a string
+     75 * shiftleft	    * data.c
+     76 setitem		    process.c
+     77 AllocFunction	    functions.c
+     78	AllocLineParser	    functions.c
+     79 ParserItem	    functions.c
+     80 bcountused	    code.c
+     81 writegbunch	    code.c
+     82 joincibox	    routines2.c
+     83 makevar		    routines2.c
+     84 countcalls	    routines2.c
+     85 toup		    routines1.c
+     86 wbound		    routines2.c
+     87 boxfind		    routines2.c
+     88 showdir		    utility.c
+     89 showfile	    utility.c
+     90 skipaline	    traslate.c
+     91 setsimpledef	    traslate.c
+     92 createhunk	    code.c
+     93 dounknown	    traslate2.c
+     94 findstructitem	    routines3.c
+     95 newtitem	    routines3.c
+
+Functions ===> 93
+
+* WARNING: there are 2 functions that do the same work. (createitem, newitem)
+	   one of them will be surely removed
+
+'-' --> THIS SIGN MEANS THIS FUNCTION WAS REMOVED FROM FILE
+	SO IT IS NOT COUNTED
+
+! WARNING: it must be completed
+
+; items fns:
+; setitem		process.c
+; newitem		routines.c
+; createitem		routines1.c
